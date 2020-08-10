@@ -1,0 +1,21 @@
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+  <div>Help<span>China</span></div>
+</div>
+<br>
+<form class="login"
+      (ngSubmit)="login()"
+      [formGroup]="loginForm"
+      focusInvalidInput>
+  <div class="p-float-label">
+    <input formControlName="login" id="login-input" type="text" pInputText>
+    <label for="login-input">Login</label>
+    <small *ngIf="controls.login.hasError('required')" class="p-invalid">Login can be blank</small>
+  </div>
+  <div>
+    <input formControlName="password" id="password-input" type="password" pPassword />
+    <small *ngIf="controls.password.hasError('required')" class="p-invalid">Password can be blank</small>
+  </div>
+  <button pButton [disabled]="loginForm.invalid" pRipple type="button" label="Primary" class="p-button-raised"></button>
+</form>

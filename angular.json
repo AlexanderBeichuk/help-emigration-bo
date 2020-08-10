@@ -126,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "help-emigration-bo"
+    }
+  },
+  "defaultProject": "help-emigration-bo",
+  "cli": {
+    "analytics": "0bfb24fb-7f1b-4cb5-b2cd-4438340b760a"
+  }
 }
