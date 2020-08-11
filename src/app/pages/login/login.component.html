@@ -17,5 +17,5 @@
     <input formControlName="password" id="password-input" type="password" pPassword />
     <small *ngIf="controls.password.hasError('required')" class="p-invalid">Password can be blank</small>
   </div>
-  <button pButton [disabled]="loginForm.invalid" pRipple type="button" label="Primary" class="p-button-raised"></button>
+  <button pButton [disabled]="loginForm.invalid" pRipple type="submit" label="Primary" class="p-button-raised"></button>
 </form>

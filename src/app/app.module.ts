@@ -13,6 +13,9 @@ import {AuthenticationInterceptor} from './interceptors/authentication.intercept
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ToastModule} from 'primeng/toast';
+import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import {ReactiveFormsModule} from '@angular/forms';
     InputTextModule,
     PasswordModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
+    VirtualScrollerModule,
+    ChartModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true },

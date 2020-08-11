@@ -3,11 +3,14 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import {AuthenticationService} from '../services/authentication.service';
+import {MessageService} from 'primeng';
+import {ToastEnum} from '../models/entity.enum';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(
     private authenticationService: AuthenticationService,
+    // private toast: MessageService
   ) {}
 
   public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -17,7 +20,11 @@ export class ErrorInterceptor implements HttpInterceptor {
         // location.reload();
       }
       const error = err.error.message || err.statusText;
-      // this.toast.notify(`${err.status} ${error}`);
+      // this.toast.add({
+      //   severity: ToastEnum.success,
+      //   summary: err.status,
+      //   detail: error
+      // })
       return throwError(err);
     }));
   }
